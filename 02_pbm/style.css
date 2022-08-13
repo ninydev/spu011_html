@@ -1,0 +1,22 @@
+/* обращение по id элемента */
+#listElement {background: red}
+
+/* обращение к элементам по class */
+.borderRed {border: 1px solid red;}
+.backGreen {background: green}
+
+/* Последовательности вложенности */
+#mainMenu .borderRed {border: 1px solid greenyellow;}
+.borderRed #mainMenu1 {border: 1px solid greenyellow;}
+
+/* комбинации для типа элемента */
+p.backGreen {background: darkgreen}
+
+/* Дополнение к уже существующему описанию */
+.borderRed {background: lightcoral; border: 1px solid yellow;}
+
+/*
+Любой кликабельный элемент (ссылка и тд) должен быть с
+описанием изменения поведения при попадании на него мышки
+*/
+a:hover { background: darkgreen; color: yellow;}

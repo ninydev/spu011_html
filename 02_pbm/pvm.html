@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+      .inner {
+          display: block;
+          /* 1 - со всех сторон */
+          /* 2 - top&bottom left&right */
+          /* 4 - top right bottom left */
+          margin-top: 55px;
+          margin: 20px;
+          border: 1px solid rebeccapurple;
+          padding: 20px;
+          width: 30%;
+          height: 50px;
+      }
+
+      .second {
+          width: 30%;
+          display: block;
+          margin: 20px;
+          border: 1px solid red;
+          padding: 30px;
+      }
+
+      div:hover {border: 1px solid transparent}
+      div {border: 1px solid transparent}
+
+  </style>
+
+</head>
+<body>
+
+<div class="outer">
+    <div class="inner" id="listElement"> <p> Content </p> </div>
+    <div class="second"> Second </div>
+</div>
+
+<script>
+    document.getElementById('listElement').style.background = "gray"
+</script>
+
+</body>
+</html>
