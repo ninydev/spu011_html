@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    * {padding: 0; margin: 0; list-style: none;}
+    .clearfix:after {content: ""; display: table; clear: both;}
+
+    #foodListFloat {}
+    #foodListFloat li {display: block; width: 158px; float: left; margin: 20px; padding: 10px; text-align: center; border: 1px solid gray; border-radius: 8px;}
+    #foodListFloat li:hover {border: 1px solid red}
+    #foodListFloat li img {display: block; height: 128px; width: 128px; padding: 10px;}
+
+    #foodListGrid {display: table;  }
+    #foodListGrid li { display: table-cell ; width: 158px;  margin: 20px; padding: 10px; text-align: center; border: 1px solid gray; border-radius: 8px;}
+    #foodListGrid li:hover {border: 1px solid red}
+    #foodListGrid li img {display: block; height: 128px; width: 128px; padding: 10px;}
+
+    #foodListFlex {display: flex;  }
+    #foodListFlex li { flex: auto; width: 158px;  margin: 20px; padding: 10px; text-align: center; border: 1px solid gray; border-radius: 8px;}
+    #foodListFlex li:hover {border: 1px solid red}
+    #foodListFlex li img {display: block; height: 128px; width: 128px; padding: 10px;}
+
+  </style>
+</head>
+<body>
+<h1> Верстка на Flex </h1>
+<ul id="foodListFlex" class="clearfix">
+  <li><img src="img/food/Food_C203-128.png" alt="Яйца" /> Яйца  </li>
+  <li><img src="img/food/Food_C205-128.png" alt="Рыба" /> Рыба  </li>
+  <li><img src="img/food/Food_C217-128.png" alt="Сыр" /> Сыр  </li>
+  <li><img src="img/food/Food_C225-128.png" alt="Мясо" /> Мясо  </li>
+  <li><img src="img/food/Food_C235-128.png" alt="Зелень" /> Зелень  </li>
+  <li><img src="img/food/Food_C238-128.png" alt="Чеснок" /> Чеснок  </li>
+  <li><img src="img/food/Food_C239-128.png" alt="Грибы" /> Грибы  </li>
+  <li><img src="img/food/Food_C240-128.png" alt="Яблоко" /> Яблоко  </li>
+  <li><img src="img/food/Food_C245-128.png" alt="Кукуруза" /> Кукуруза  </li>
+  <li><img src="img/food/Food_C247-128.png" alt="Перец" /> Перец  </li>
+</ul>
+
+<h1> Верстка на таблицах </h1>
+<ul id="foodListGrid" class="clearfix">
+  <li><img src="img/food/Food_C203-128.png" alt="Яйца" /> Яйца  </li>
+  <li><img src="img/food/Food_C205-128.png" alt="Рыба" /> Рыба  </li>
+  <li><img src="img/food/Food_C217-128.png" alt="Сыр" /> Сыр  </li>
+  <li><img src="img/food/Food_C225-128.png" alt="Мясо" /> Мясо  </li>
+  <li><img src="img/food/Food_C235-128.png" alt="Зелень" /> Зелень  </li>
+  <li><img src="img/food/Food_C238-128.png" alt="Чеснок" /> Чеснок  </li>
+  <li><img src="img/food/Food_C239-128.png" alt="Грибы" /> Грибы  </li>
+  <li><img src="img/food/Food_C240-128.png" alt="Яблоко" /> Яблоко  </li>
+  <li><img src="img/food/Food_C245-128.png" alt="Кукуруза" /> Кукуруза  </li>
+  <li><img src="img/food/Food_C247-128.png" alt="Перец" /> Перец  </li>
+</ul>
+
+<h1> Верстка на float </h1>
+<ul id="foodListFloat" class="clearfix">
+  <li><img src="img/food/Food_C203-128.png" alt="Яйца" /> Яйца  </li>
+  <li><img src="img/food/Food_C205-128.png" alt="Рыба" /> Рыба  </li>
+  <li><img src="img/food/Food_C217-128.png" alt="Сыр" /> Сыр  </li>
+  <li><img src="img/food/Food_C225-128.png" alt="Мясо" /> Мясо  </li>
+  <li><img src="img/food/Food_C235-128.png" alt="Зелень" /> Зелень  </li>
+  <li><img src="img/food/Food_C238-128.png" alt="Чеснок" /> Чеснок  </li>
+  <li><img src="img/food/Food_C239-128.png" alt="Грибы" /> Грибы  </li>
+  <li><img src="img/food/Food_C240-128.png" alt="Яблоко" /> Яблоко  </li>
+  <li><img src="img/food/Food_C245-128.png" alt="Кукуруза" /> Кукуруза  </li>
+  <li><img src="img/food/Food_C247-128.png" alt="Перец" /> Перец  </li>
+</ul>
+
+
+</body>
+</html>

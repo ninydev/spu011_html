@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .row {display: grid; grid-template-columns: 20% 60% 20%;}
+    .row div { display: inline-grid; border: 1px solid gray; padding: 20px; margin: 20px;}
+
+    @media screen and (max-width: 900px) {
+      .row {display: grid; grid-template-columns: 40% 60%;}
+    }
+
+    @media screen and (max-width: 600px) {
+      .row {display: grid; grid-template-columns: 100%;}
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<div class="row">
+
+  <div class="left"> left </div>
+  <div class="main"> main </div>
+  <div class="right"> right </div>
+
+</div>
+
+</body>
+</html>
