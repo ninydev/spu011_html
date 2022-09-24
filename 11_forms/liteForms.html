@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #userName {border: 1px solid gray;}
+  </style>
+</head>
+<body>
+
+<form method="get" action="liteForms.html">
+  <input type="hidden" name="id" value="1234"><br>
+  <label> Имя пользователя  <input type="text" name="userName" id="userName" placeholder="Подсказа при пустом поле" disabled></label><br>
+  <label> Пароль <input type="password" name="userPassword"></label><br>
+  <select name="m" multiple>
+    <option value="1"> Первый месяц </option>
+    <option value="2"> Второй месяц </option>
+  </select><br>
+  <textarea name="bigText"></textarea><br>
+  <label> Подтвердите согласие<input type="checkbox" value="Согласен" name="confurm"></label><br>
+  <label> Ваш пол
+    <input type="radio" value="мальчик" name="sex">
+    <input type="radio" value="девочка" name="sex">
+  </label><br>
+  <label>Аватар <input type="file" name="fileAvatar"></label><br>
+  <hr>
+  <input type="date"><br>
+  <input type="email">
+  <button> Нажми меня - отправит форму </button>
+  <input type="button" value="или меня">
+  <input type="submit" name="var1">
+  <input type="submit" name="var2">
+  <input type="reset">
+</form>
+
+
+<!--<form method="get" action="liteForms.html">-->
+<!--  <input type="text" name="search">-->
+<!--  <input type="submit">-->
+<!--</form>-->
+
+<script>
+  document.getElementById("userName").onchange = function (event) {
+    let el = event.target // Ссылка на элемент
+    console.log(event.target.value) // вывод значения в консоль для отладки
+    if(el.value.length < 3) {
+      el.style.border = "1px solid red"
+    } else {
+      el.style.border = "1px solid green"
+    }
+  }
+</script>
+
+
+</body>
+</html>
