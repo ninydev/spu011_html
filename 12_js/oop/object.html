@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+
+
+<script>
+  // let p =  {
+  //   name: 'Oleksandr',
+  //   age: 45,
+  //     startMe : function (v) {
+  //         console.log('start ' + v)
+  //     }
+  // }
+  //
+  // p[0] = 100
+  // console.log('ClassName: ' + p.constructor.name)
+  // console.log(typeof (p))
+  // console.log(p)
+  //
+  // // Сериализация
+  // let jsonStr = JSON.stringify(p)
+  // console.log(jsonStr)
+  //
+  // // Десериализация
+  // let recoveryP = JSON.parse(jsonStr)
+  // console.log(recoveryP)
+
+
+  let arr = ["Яблоко", "Апельсин", "Груша"]
+  arr['key'] = 'value'
+
+  console.log(arr)
+
+  // Сериализация
+  let jsonArrStr = JSON.stringify(arr)
+  console.log(jsonArrStr)
+
+  // Десериализация
+  let recoveryArr = JSON.parse(jsonArrStr)
+  console.log(recoveryArr)
+
+</script>
+</body>
+</html>

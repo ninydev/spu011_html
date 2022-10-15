@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+</head>
+<body>
+
+
+<script>
+  // 'use strict'
+
+  class Person {
+    name
+    age
+    startMe = function (v) {
+        console.log('start ' + v)
+    }
+  }
+  let p = new Person()
+  console.log(p)
+  p.startMe('qq')
+
+  p.name = 'Olexander'
+  p.age = 45
+  p[0] = 100
+  p[1] = function () {
+      console.log('fun 1')
+  }
+
+  p[1]()
+
+  console.log(typeof (p))
+  console.log('ClassName: ' + p.constructor.name)
+  console.log(p)
+
+  console.log(Person)
+
+  // p['name'] = 'Sashko'
+  // p['age'] = '30'
+  // console.log(p)
+  //
+  // p[0] = 100
+  // console.log(p)
+
+
+
+  // Перебор ключей массива
+  // for (let key in p) {
+  //   console.log( key + ' => ' +  p[key] )
+  // }
+
+
+  // Сериализация
+  let jsonStr = JSON.stringify(p)
+  console.log(jsonStr)
+
+  // Десериализация
+  let recoveryP = JSON.parse(jsonStr)
+  console.log(recoveryP)
+</script>
+
+</body>
+</html>

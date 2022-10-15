@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  let arr = ["Яблоко", "Апельсин", "Груша"];
+  arr['key'] = 'value'
+
+  console.log('--------------------- for')
+  for (let i = 0; i < arr.length; i++) {
+    console.log( arr[i] );
+  }
+
+  // проходит по значениям
+  console.log('--------------------- for of')
+  for (let el of arr) {
+    console.log( el );
+  }
+
+  console.log('--------------------- for in')
+  for (let key in arr) {
+    console.log( key + '=>' +  arr[key] ); // Яблоко, Апельсин, Груша
+  }
+
+  console.log('--------------------- map')
+  arr.map(el => {
+    console.log( el )
+  })
+
+  console.log('--------------------- object')
+  let obj = {a: "Яблоко", b: "Апельсин", c: "Груша"};
+  console.log(obj)
+  for (let key in obj) {
+    console.log( key + '=>' +  obj[key] ); // Яблоко, Апельсин, Груша
+  }
+
+
+
+
+
+</script>
+
+<script>
+  // let arr = new Array()
+  //
+  // for (let i = 0; i < 5; i++) {
+  //   arr[i] = i
+  // }
+  // delete arr[3]
+  // console.log(typeof (arr[3]))
+  // arr[3] = 2 / 0
+  // console.log(typeof (arr[3]))
+  // console.log(arr[3])
+  // arr[3] = 2 / 'nan'
+  // console.log(typeof (arr[3]))
+  // console.log(arr[3])
+  // // arr[5] = []
+  // console.log(arr)
+  //
+  //
+  //
+  // arr.unshift(222)
+  // console.log(arr)
+  // el = arr.shift()
+  // console.log(el)
+  //
+  // arr.push(111)
+  // console.log(arr)
+  // el = arr.pop()
+  // console.log(el)
+
+</script>
+
+
+
+<script>
+  // let arr1 = new Array()
+  // arr1[10] = "Test"
+  // arr1[1] = 1
+  // arr1[2] = true
+  // arr1[3] = {}
+  // arr1[4] = null
+  // arr1[5] = undefined
+  // arr1[6] = NaN
+  // arr1['key'] = 'value' // Я отношусь к массиву как к объекту
+  // arr1['поле'] = 'value'
+  // arr1['поле1'] = 'value'
+  // arr1['поле2'] = 'value'
+  // arr1['поле3'] = 'value'
+  // arr1['поле4'] = 'value'
+  // arr1['поле5'] = 'value'
+  // arr1['поле6'] = 'value'
+  // arr1['поле7'] = 'value'
+  // arr1['поле8'] = 'value'
+  // arr1['поле9'] = 'value'
+  // console.log(arr1)
+
+  // let obj1 = {}
+  // obj1['key'] = 'value'
+  // obj1[10] = "Test"
+  // obj1[1] = 1
+  // obj1[2] = true
+  // obj1[3] = {}
+  // obj1[4] = null
+  // obj1[5] = undefined
+  // obj1[6] = NaN
+  // console.log(obj1)
+
+  // console.log(arr1.key)
+  // console.log(obj1.key)
+  //
+  // console.log(arr1['key'])
+  // console.log(obj1['10'])
+  // console.log(obj1[10])
+
+  // console.log('Array -------------------------------- ')
+  // console.log(arr1)
+  // for (let i = 0; i < arr1.length; i++) {
+  //   console.log(arr1[i])
+  // }
+  // console.log('Array Map -------------------------------- ')
+  // arr1.map(el => {
+  //   console.log(el)
+  // })
+
+  // console.log('Object -------------------------------- ')
+  // console.log(obj1)
+  // for (let i = 0; i < obj1.length; i++) {
+  //   console.log(obj1[i])
+  // }
+  // console.log('Object Map -------------------------------- ')
+  // obj1.map(el => {
+  //   console.log(el)
+  // })
+
+</script>
+
+
+</body>
+</html>

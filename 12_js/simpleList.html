@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+  <style>
+
+  </style>
+
+
+</head>
+<body>
+
+<ul id="lstProduct">
+</ul>
+
+
+<script>
+  let elements = ['Notebooks', 'Monitors']
+
+  let ul = document.getElementById('lstProduct')
+
+  elements.map( element => {
+    let li = document.createElement('li')
+    li.innerText = element
+    ul.appendChild(li)
+  })
+
+</script>
+
+
+</body>
+</html>
