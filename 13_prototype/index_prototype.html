@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  let nykytin = {
+    name: 'Olexander Nykytin',
+    age: 45
+  }
+
+  let teacher = {
+    lectures: [ 'java', 'c#', 'javaScript' ],
+    say() {  console.log('say') }
+  }
+
+  nykytin.__proto__ = teacher
+  nykytin.say()
+
+  let coder = {
+    coding() {  console.log('writeCode')  }
+  }
+
+  nykytin.__proto__ = coder
+  nykytin.coding()
+
+  nykytin.__proto__ = teacher
+  nykytin.say()
+
+  // nykytin.say() // ошибка - поскольку объект перестал быть учителем
+
+  // console.log(nykytin.hasOwnProperty('say'))
+  // console.log(teacher.hasOwnProperty('say'))
+  //
+  // console.log(Object.getPrototypeOf(nykytin))
+  //
+  //
+  // let zaicev = Object.create(teacher)
+  //
+  // zaicev.say()
+  // console.log(zaicev)
+
+  // user.say()
+
+  // console.log(user)
+  // console.log(user.lectures)
+  // console.log(teacher)
+  //
+  // console.log("+---------------+")
+  //
+  // teacher.lectures.push("php")
+  // console.log(user.lectures)
+  //
+  // user.lectures.push("python")
+  // console.log(user.lectures)
+  // console.log(teacher.lectures)
+
+
+</script>
+
+</body>
+</html>

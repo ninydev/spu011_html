@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  let proto1 = {
+    doThis() {
+      console.log('do proto 1 ')
+    }
+  }
+
+  let proto2 = {
+    doThis(){
+      console.log('do proto 2 ')
+    }
+  }
+
+  let obj = {
+    doThis() {
+      console.log('From Obj ')
+    },
+    doMe () {
+      this.doThis()
+    }
+  }
+  console.log('Start')
+  obj.doMe()
+
+  console.log('1')
+  obj.__proto__ = proto1
+  obj.doMe()
+
+  console.log('2')
+  obj.__proto__ = proto2
+  obj.doMe()
+
+</script>
+
+</body>
+</html>

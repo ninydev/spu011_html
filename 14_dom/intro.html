@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="frmLogin"></div>
+
+<header>
+  <h1> Site Name </h1>
+</header>
+
+<main>
+  <article>
+    <header> Post Title </header>
+    <div> Post Body </div>
+    <footer> Post Footer </footer>
+  </article>
+</main>
+
+<section >
+  <ul id="work">
+    <li>first</li>
+    <li>2</li>
+    <li>3</li>
+    <li>middle <span id="star" style="background-color: #9BC850"> * </span></li>
+    <li>5</li>
+    <li>6</li>
+    <li>last</li>
+  </ul>
+</section>
+
+<script>
+
+  let work = document.getElementById("work")
+  let kids = work.children;
+  for(let k = 0; k < kids.length; k++) {
+    // console.log(kids[k].innerHTML)
+    kids[k].dataset.num = "num : " + k
+  }
+
+  work.firstElementChild.style.backgroundColor = "yellow"
+  work.lastElementChild.style.backgroundColor = "blue"
+
+
+</script>
+
+
+<script>
+  // let middle = document.getElementById("star").parentElement
+  // middle.previousElementSibling.style.border = "1px solid red"
+  // middle.nextElementSibling.style.border = "1px solid red"
+</script>
+
+<script>
+  //let star = document.getElementById("star")
+
+  // Navigation to parent
+  // let starParentElement = star.parentElement
+  // console.log(starParentElement)
+  // let starParentNode = star.parentNode
+  // console.log(starParentNode)
+
+  // let p1 = star.parentElement
+  // p1.style.border = "1px solid green"
+  //
+  // let p2 = p1.parentElement
+  // p2.style.border = "1px dotted red"
+  //
+  // let p3 = p2.parentElement
+  // p3.style.border = "1px solid black"
+
+  // let n1 = star.parentNode
+  // n1.style.border = "1px solid green"
+  //
+  // let n2 = n1.parentNode
+  // n2.style.border = "1px dotted red"
+  //
+  // let n3 = n2.parentNode
+  // n3.style.border = "1px solid black"
+</script>
+
+<script>
+  let star = document.getElementById("star")
+
+  // // Content (наполнение элемента)
+  // star.innerText = "New Star Text"
+  // star.innerHTML = "<strong> html </strong>"
+  // star.innerText = "After <span> innerHtml </span>"
+
+  // Style (правила отображения элемента)
+  star.style.border = "1px solid green"
+  star.style.backgroundColor = "gray"
+
+  // Attr
+  star.dataset.id_in_database = 123
+
+  // Events
+  star.onclick = () => { console.log("Click") }
+
+
+
+</script>
+
+</body>
+</html>

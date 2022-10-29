@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  let animal = {
+    eats: true,
+    walk() {
+      console.log("Animal walk");
+    }
+  };
+
+  let rabbit = {
+    jumps: true,
+    __proto__: animal
+  };
+
+  let longEar = {
+    earLength: 10,
+    __proto__: rabbit
+  };
+
+  // walk взят из цепочки прототипов
+  longEar.walk(); // Animal walk
+  console.log(longEar.jumps); // true (из rabbit)
+
+  console.log(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(longEar)))))
+
+</script>
+</body>
+</html>
