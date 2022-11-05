@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+  <style>
+    .mastSelect {background-color: #9BC850;}
+    #work .mastSelect {background-color: #2A9FBC;}
+
+  </style>
 </head>
 <body>
 
@@ -23,7 +29,7 @@
 <section >
   <ul id="work">
     <li>first</li>
-    <li>2</li>
+    <li class="mastSelect">2</li>
     <li>3</li>
     <li>middle <span id="star" style="background-color: #9BC850"> * </span></li>
     <li>5</li>
@@ -32,21 +38,55 @@
   </ul>
 </section>
 
+<section>
+  <ul id="work_second">
+    <li>first</li>
+    <li class="mastSelect">2</li>
+    <li>3</li>
+    <li>middle <span id="star_second" style="background-color: #9BC850"> * </span></li>
+    <li>5</li>
+    <li>6</li>
+    <li>last</li>
+  </ul>
+</section>
+
 <script>
 
-  let work = document.getElementById("work")
-  let kids = work.children;
-  for(let k = 0; k < kids.length; k++) {
-    // console.log(kids[k].innerHTML)
-    kids[k].dataset.num = "num : " + k
-  }
+  let byId = document.getElementById('work')
+  console.log(byId)
+  let byQuery = document.querySelector('#work')
+  console.log(byQuery)
 
-  work.firstElementChild.style.backgroundColor = "yellow"
-  work.lastElementChild.style.backgroundColor = "blue"
+  // let work = document.getElementById('work')
+  // let elInWork = work.querySelector('.mastSelect')
+  // console.log(elInWork)
+  //
+  // // Выбирает 1 встреченную Node в DOM дереве
+  // let el = document.querySelector('.mastSelect')
+  // console.log(el)
+  //
+  // // Формирует NodeList из всех выбранных элементов
+  // let els = document.querySelectorAll('.mastSelect')
+  // console.log(els)
 
 
 </script>
 
+
+<script>
+
+  // let work = document.getElementById("work")
+  // let kids = work.children;
+  // for(let k = 0; k < kids.length; k++) {
+  //   // console.log(kids[k].innerHTML)
+  //   kids[k].dataset.num = "num : " + k
+  // }
+  //
+  // work.firstElementChild.style.backgroundColor = "yellow"
+  // work.lastElementChild.style.backgroundColor = "blue"
+
+
+</script>
 
 <script>
   // let middle = document.getElementById("star").parentElement
@@ -83,25 +123,22 @@
 </script>
 
 <script>
-  let star = document.getElementById("star")
-
-  // // Content (наполнение элемента)
-  // star.innerText = "New Star Text"
-  // star.innerHTML = "<strong> html </strong>"
-  // star.innerText = "After <span> innerHtml </span>"
-
-  // Style (правила отображения элемента)
-  star.style.border = "1px solid green"
-  star.style.backgroundColor = "gray"
-
-  // Attr
-  star.dataset.id_in_database = 123
-
-  // Events
-  star.onclick = () => { console.log("Click") }
-
-
-
+  // let star = document.getElementById("star")
+  //
+  // // // Content (наполнение элемента)
+  // // star.innerText = "New Star Text"
+  // // star.innerHTML = "<strong> html </strong>"
+  // // star.innerText = "After <span> innerHtml </span>"
+  //
+  // // Style (правила отображения элемента)
+  // star.style.border = "1px solid green"
+  // star.style.backgroundColor = "gray"
+  //
+  // // Attr
+  // star.dataset.id_in_database = 123
+  //
+  // // Events
+  // star.onclick = () => { console.log("Click") }
 </script>
 
 </body>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <form id="frmSend">
+    <input type="text" name="email"><br>
+    <input type="text" name="name"><br>
+    <input type="text" name="recomendation"><br>
+    <input type="password" name="password"><br>
+    <input type="button" name="tryLogin" value="Login" id="btnSend" disabled>
+  </form>
+
+<script>
+
+  let frm = document.getElementById('frmSend')
+  let btn = document.getElementById('btnSend')
+
+  function doValidate(ev) {
+
+    if (ev.target.value.length < 3)
+      ev.target.style.border = '1px solid red'
+    else
+      ev.target.style.border = '1px solid green'
+
+
+    let isDisabled = false
+    let BreakException = {} // Пустой объект
+    try {
+        inputs.forEach( i => {
+          if (i.value.length < 3)
+          {
+            isDisabled = true
+            throw BreakException; // Выкинули исключение
+          }
+        })
+    } catch (e) {
+      if (e !== BreakException) throw e;
+    }
+    btn.disabled = isDisabled
+  }
+
+
+  let inputs = frm.querySelectorAll('input:not([type=button])')
+  inputs.forEach( i => {
+    i.onchange = doValidate
+    i.style.border = '1px solid transparent'
+  })
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
