@@ -5,55 +5,95 @@
     <title>Title</title>
 </head>
 <body>
+<p>
+    before
+    <div> some </div>
+    after
+</p>
 
-  <form id="frmSend">
-    <input type="text" name="email"><br>
-    <input type="text" name="name"><br>
+  <form id="frmSend" name="frmSend">
+    <input type="text" name="email"><br><hr>
+      <p>Совсем не нужная нам информация</p>
+    <input type="text" name="name" value="Покажи меня"><br>
     <input type="text" name="recomendation"><br>
     <input type="password" name="password"><br>
     <input type="button" name="tryLogin" value="Login" id="btnSend" disabled>
   </form>
 
+    <form name="frmAlisa">
+        <input type="text" name="someElse"><br>
+        <input type="text" name="name" value="Съешь меня"><br>
+    </form>
+
+
+<script>
+    let frmData = new FormData(document.forms.frmSend)
+    console.log(frmData)
+    let object = {};
+    frmData.forEach(function(value, key){
+        object[key] = value;
+        object[key] = value;
+    });
+    let json = JSON.stringify(object);
+    console.log(json)
+</script>
+
+<script>
+    // let frmDom = document.getElementById('frmSend')
+    // let frmByIndex = document.forms[0]
+    // let frmById = document.forms['frmSend']
+    // let frmByName = document.forms.frmSend
+    //
+    // console.log(" By Index ")
+    // console.log(frmByIndex.elements.name.value)
+    // console.log(" By Name ")
+    // console.log(frmByName.elements.name.value)
+    // console.log(" By Id ")
+    // console.log(frmById.elements.name.value)
+    //
+    // let frmAlisaByIndex = document.forms[1]
+    // console.log(frmAlisaByIndex.elements.name.value)
+
+
+
+</script>
+
+
 <script>
 
-  let frm = document.getElementById('frmSend')
-  let btn = document.getElementById('btnSend')
-
-  function doValidate(ev) {
-
-    if (ev.target.value.length < 3)
-      ev.target.style.border = '1px solid red'
-    else
-      ev.target.style.border = '1px solid green'
-
-
-    let isDisabled = false
-    let BreakException = {} // Пустой объект
-    try {
-        inputs.forEach( i => {
-          if (i.value.length < 3)
-          {
-            isDisabled = true
-            throw BreakException; // Выкинули исключение
-          }
-        })
-    } catch (e) {
-      if (e !== BreakException) throw e;
-    }
-    btn.disabled = isDisabled
-  }
-
-
-  let inputs = frm.querySelectorAll('input:not([type=button])')
-  inputs.forEach( i => {
-    i.onchange = doValidate
-    i.style.border = '1px solid transparent'
-  })
-
-
-
-
-
+  // let frm = document.getElementById('frmSend')
+  // let btn = document.getElementById('btnSend')
+  //
+  // function doValidate(ev) {
+  //
+  //   if (ev.target.value.length < 3)
+  //     ev.target.style.border = '1px solid red'
+  //   else
+  //     ev.target.style.border = '1px solid green'
+  //
+  //
+  //   let isDisabled = false
+  //   let BreakException = {} // Пустой объект
+  //   try {
+  //       inputs.forEach( i => {
+  //         if (i.value.length < 3)
+  //         {
+  //           isDisabled = true
+  //           throw BreakException; // Выкинули исключение
+  //         }
+  //       })
+  //   } catch (e) {
+  //     if (e !== BreakException) throw e;
+  //   }
+  //   btn.disabled = isDisabled
+  // }
+  //
+  //
+  // let inputs = frm.querySelectorAll('input:not([type=button])')
+  // inputs.forEach( i => {
+  //   i.onchange = doValidate
+  //   i.style.border = '1px solid transparent'
+  // })
 
 </script>
 

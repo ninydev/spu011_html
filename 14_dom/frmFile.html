@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form name="frmImg">
+  <input type="file" name="myAvatar">
+</form>
+<img id="avatarPrev" height="200" width="200">
+
+<script>
+  let frmImg = document.forms.frmImg
+  let avatarPrev = document.getElementById("avatarPrev")
+  let inImg = frmImg.elements.myAvatar
+
+  frmImg.elements.myAvatar.onchange = () => {
+    console.log("Поменяли файл")
+    const fileReader = new FileReader()
+    fileReader.addEventListener("load", (result) => {
+      console.log(" File is read")
+      avatarPrev.src= fileReader.result;
+    })
+    fileReader.readAsDataURL(frmImg.elements.myAvatar.files[0]);
+  }
+
+
+</script>
+
+</body>
+</html>
