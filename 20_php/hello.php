@@ -1,9 +1,9 @@
 <?php
     require ('layout/header.php');
-    include ('layout/footer.php');
+    include ('layout/footer1.php');
 ?>
 
-<header> начало работы </header>
+<header> начало работы что то меняю</header>
 
 <?php
     echo "<pre>";
@@ -15,6 +15,7 @@
 
 
 <?php
+$var_NeUviju = "nen";
 //   $c = $a + $b;
 //
 //   $d = 10 / 0;
