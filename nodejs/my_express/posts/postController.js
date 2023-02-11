@@ -1,10 +1,18 @@
+const postModel = require('./../models/PostModel')
+
 /**
  * Получение всех постов на проекте
  * @param request - полученный запрос
  * @param response - объект для построения ответа
  */
 exports.getPosts = function(request, response){
-    response.send("Список постов");
+    postModel.find({}, function (err, allPosts) {
+            if(err){
+                console.log(err)
+                return response.status(422).json(err)
+            }
+            return response.status(200).json(allPosts)
+        })
 };
 
 
@@ -14,5 +22,14 @@ exports.getPosts = function(request, response){
  * @param response
  */
 exports.postPost = function (request, response) {
-    response.send("Пост добавлен");
+    const body = request.body
+    const newPost = new postModel(body)
+
+    newPost.save(function (err) {
+        if(err){
+            console.log(err)
+            return response.status(422).json(err)
+        }
+        return response.status(201).json(newPost)
+    })
 }

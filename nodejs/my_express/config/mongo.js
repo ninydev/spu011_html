@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 exports.connect = () => {
     console.log (process.env.MONGODB_URI)
+    mongoose.set('strictQuery', false)
     mongoose.connect(process.env.MONGODB_URI,
         {
             useNewUrlParser: true,
