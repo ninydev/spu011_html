@@ -6,6 +6,7 @@ const postModel = require('./../models/PostModel')
  * @param response - объект для построения ответа
  */
 exports.getPosts = function(request, response){
+
     postModel.find({}, function (err, allPosts) {
             if(err){
                 console.log(err)
@@ -30,6 +31,7 @@ exports.postPost = function (request, response) {
             console.log(err)
             return response.status(422).json(err)
         }
+        request.app.get('socketServer').emit('newPost', newPost)
         return response.status(201).json(newPost)
     })
 }

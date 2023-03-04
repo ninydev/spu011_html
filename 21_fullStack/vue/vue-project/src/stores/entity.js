@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { toast } from 'vue3-toastify';
 import myLocalStorage from "@/stores/service/myLocalStorage";
 import myFetch from "@/stores/service/myFetch";
 
@@ -19,7 +18,7 @@ export const useEntityStore = defineStore('entity',{
             //     return
             // }
 
-            myFetch.fetch('http://localhost/api/entity')
+            myFetch.fetch('/entity')
                 .then(data => {
                             this.entities = data
                             this.isLoaded = true

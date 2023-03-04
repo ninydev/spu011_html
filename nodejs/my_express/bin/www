@@ -21,6 +21,18 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+// Socket соединения
+const { Server } = require("socket.io")
+const socketServer = new Server(server, {
+  cors: {
+    origin: '*'
+  }
+})
+
+app.set('socketServer', socketServer)
+
+
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -88,3 +100,4 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+

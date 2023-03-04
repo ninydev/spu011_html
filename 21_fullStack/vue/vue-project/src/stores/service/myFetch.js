@@ -6,12 +6,17 @@ export default {
             if (options === null) {
                 options = {}
             }
-            options.authorization = "key"
-            url+= "?key=333"
+
+            url = 'http://localhost:3000/api' + url
+
+            console.log('+ Fetch +')
+            console.log(url)
+
             fetch(url, options)
                 .then(res => res.json())
                 .then(data => {
                     toast.info('Get from Server in my service')
+                    console.log(data)
                     resole(data)
                 })
                 .catch(err => {

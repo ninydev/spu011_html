@@ -8,6 +8,10 @@ let app = express();
 require('./config/mongo').connect()
 
 
+// Cors
+let cors = require('cors')
+app.use(cors())
+
 // Работа с лог файлами
 let logger = require('morgan');
 app.use(logger('dev'));

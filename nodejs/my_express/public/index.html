@@ -8,6 +8,15 @@
 <body>
   <h1>Express 011</h1>
   <p>Welcome to Express</p>
-</body>
 
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script>
+    const socket = io();
+    socket.on('newUser', (data) => {
+      console.log('new user')
+    })
+  </script>
+
+
+</body>
 </html>
