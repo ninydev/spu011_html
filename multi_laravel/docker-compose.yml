@@ -10,8 +10,48 @@ services:
         depends_on:
             - laravel.jonny
             - laravel.sunny
+            - laravel.admin
+            - vie.front
+            - cloud.storage
         ports:
             - "80:80"
+
+    vie.front:
+        build: ./front_vue
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        volumes:
+            - ./front_vue:/usr/src/app
+#        ports:
+#            - "5173:5173"
+        networks:
+            - sail
+
+    laravel.admin:
+        build:
+            context: ./laracore/vendor/laravel/sail/runtimes/8.2
+            dockerfile: Dockerfile
+            args:
+                WWWGROUP: '${WWWGROUP}'
+        image: sail-8.2/app
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        #        ports:
+        #            - '${APP_PORT:-80}:80'
+        #            - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
+        environment:
+            NAME: Admin
+            WWWUSER: '${WWWUSER}'
+            LARAVEL_SAIL: 1
+            XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
+            XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
+        volumes:
+            - './laracore:/var/www/html'
+        networks:
+            - sail
+        depends_on:
+            - mysql
+            - redis
 
     laravel.sunny:
         build:
@@ -91,6 +131,20 @@ services:
         networks:
             - sail
 
+    cloud.storage:
+        build: ./cloud_storage
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        networks:
+            - sail
+        env_file:
+            - ./cloud_storage/.env
+        ports:
+            - "127.0.0.1:10010:9000"
+            - "127.0.0.1:10020:9001"
+        volumes:
+            - cloud-storage:/data
+
 networks:
     sail:
         driver: bridge
@@ -98,4 +152,6 @@ volumes:
     sail-mysql:
         driver: local
     sail-redis:
+        driver: local
+    cloud-storage:
         driver: local
