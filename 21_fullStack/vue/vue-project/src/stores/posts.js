@@ -12,11 +12,6 @@ export const usePostStore = defineStore('post', {
     actions: {
         loadFromServer() {
 
-            socket.on('newPost', (data) => {
-                toast.info('New Post')
-                this.posts.push(data)
-            })
-
             this.isLoaded = false
 
             myFetch.fetch('/posts')

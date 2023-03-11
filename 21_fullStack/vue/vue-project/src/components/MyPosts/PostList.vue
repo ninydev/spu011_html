@@ -16,10 +16,20 @@
 import {usePostStore} from "@/stores/posts";
 const postStore = usePostStore()
 
-import { onMounted } from 'vue'
+import {onMounted, onUnmounted} from 'vue'
+import socket from "@/stores/service/mySocketIo";
+import {toast} from "vue3-toastify";
 
 onMounted(() => {
   postStore.loadFromServer()
+  socket.on('newPost', (data) => {
+    toast.info('New Post')
+    postStore.loadFromServer()
+  })
+})
+
+onUnmounted( () => {
+  socket.off('newPost')
 })
 
 </script>
