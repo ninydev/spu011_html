@@ -14,8 +14,9 @@ class PostController extends Controller
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function index(){
-        Storage::cloud()->put('hello.json', '{"hello": "world"}');
-        return Post::all();
+        $content =Post::all();
+        Storage::cloud()->put("test.json", $content);
+        return $content;
     }
 
 }

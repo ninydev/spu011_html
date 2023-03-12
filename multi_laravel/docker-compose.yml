@@ -52,6 +52,7 @@ services:
         depends_on:
             - mysql
             - redis
+            - cloud.storage
 
     laravel.sunny:
         build:
@@ -78,6 +79,7 @@ services:
         depends_on:
             - mysql
             - redis
+            - cloud.storage
 
     laravel.jonny:
         build:
@@ -104,6 +106,7 @@ services:
         depends_on:
             - mysql
             - redis
+            - cloud.storage
 
     mysql:
         image: 'mysql/mysql-server:8.0'
