@@ -13,6 +13,8 @@ services:
             - laravel.admin
             - vie.front
             - cloud.storage
+            - socket.jonny
+            - socket.sunny
         ports:
             - "80:80"
 
@@ -147,6 +149,36 @@ services:
 #            - "127.0.0.1:10020:9001"
         volumes:
             - cloud-storage:/data
+
+    socket.sunny:
+        build: ./sockets
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        volumes:
+            - ./sockets:/usr/src/app
+        networks:
+            - sail
+        depends_on:
+            - redis
+        expose:
+            - "3000"
+        environment:
+            - NAME=Sunny
+
+    socket.jonny:
+        build: ./sockets
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        volumes:
+            - ./sockets:/usr/src/app
+        networks:
+            - sail
+        depends_on:
+            - redis
+        expose:
+            - "3000"
+        environment:
+            - NAME=Sunny
 
 networks:
     sail:
