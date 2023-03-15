@@ -142,9 +142,9 @@ services:
             - sail
         env_file:
             - ./cloud_storage/.env
-        ports:
-            - "127.0.0.1:10010:9000"
-            - "127.0.0.1:10020:9001"
+#       ports:
+#            - "127.0.0.1:10010:9000"
+#            - "127.0.0.1:10020:9001"
         volumes:
             - cloud-storage:/data
 
