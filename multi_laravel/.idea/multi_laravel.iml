@@ -8,6 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/laracore/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/laracore/vendor/ptrofimov/tinyredisclient" />
+      <excludeFolder url="file://$MODULE_DIR$/laracore/vendor/ashiina/socket.io-emitter" />
+      <excludeFolder url="file://$MODULE_DIR$/laracore/vendor/aws/aws-crt-php" />
+      <excludeFolder url="file://$MODULE_DIR$/laracore/vendor/aws/aws-sdk-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

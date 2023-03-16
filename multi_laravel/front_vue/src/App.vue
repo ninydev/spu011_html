@@ -1,6 +1,23 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import socket from "@/services/MySocketIo";
+import {toast} from "vue3-toastify";
+import {onMounted, onUnmounted} from "vue";
+const doSendMessage = () => {
+  console.log("sendMessage")
+  socket.emit("new-message", "Hello World")
+}
+
+onMounted( () => {
+  socket.on("new-message", (data) => {
+    console.log(data)
+    toast.info("New Message component " + data.username + " : " + data.message)
+  })
+})
+
+onUnmounted( () => {
+  MySocketIo.off("new-message");
+})
 </script>
 
 <template>
@@ -8,7 +25,8 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <button @click="doSendMessage"> Send Message </button>
+
 
       <nav>
         <RouterLink to="/">Home</RouterLink>

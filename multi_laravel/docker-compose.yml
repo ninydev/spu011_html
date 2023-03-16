@@ -178,7 +178,7 @@ services:
         expose:
             - "3000"
         environment:
-            - NAME=Sunny
+            - NAME=Jonny
 
 networks:
     sail:
