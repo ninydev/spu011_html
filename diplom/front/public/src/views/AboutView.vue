@@ -1,8 +1,25 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <button @click="callApi"> Click </button>
   </div>
 </template>
+
+<script setup>
+  const callApi = () => {
+    fetch('http://localhost:8000/api/test')
+        .then(res => {
+          return res.text()
+        })
+        .then(txt => {
+          console.log(txt)
+        })
+        .catch(err => {
+          console.log('Err')
+          console.log(err)
+        })
+  }
+</script>
 
 <style>
 @media (min-width: 1024px) {
