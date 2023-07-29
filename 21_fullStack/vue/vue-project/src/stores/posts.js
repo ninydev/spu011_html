@@ -14,9 +14,15 @@ export const usePostStore = defineStore('post', {
 
             this.isLoaded = false
 
+            if (myLocalStorage("posts").getItem("posts")) {
+                this.posts = myLocalStorage.getItem("posts")
+                this.isLoaded = true
+            }
+
             myFetch.fetch('/posts')
                 .then(data => {
                     this.posts = data
+                    myLocalStorage.setItem(data)
                     this.isLoaded = true
                     // myLocalStorage.setItem('posts', JSON.stringify(data))
                 })

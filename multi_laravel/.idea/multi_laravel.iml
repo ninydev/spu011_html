@@ -6,8 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$/laracore/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/laracore/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/laracore/tests" isTestSource="true" packagePrefix="Tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/laracore/vendor/ptrofimov/tinyredisclient" />
       <excludeFolder url="file://$MODULE_DIR$/laracore/vendor/ashiina/socket.io-emitter" />
       <excludeFolder url="file://$MODULE_DIR$/laracore/vendor/aws/aws-crt-php" />

@@ -20,7 +20,7 @@ export default {
                     resole(data)
                 })
                 .catch(err => {
-                    toast.error(err.message)
+                    toast.error("error in Fetch")
                     reject(err)
                 })
             })
