@@ -7,7 +7,7 @@
 
 <script setup>
   const callApi = () => {
-    fetch('http://localhost:8000/api/test')
+    fetch('/api/test')
         .then(res => {
           return res.text()
         })
